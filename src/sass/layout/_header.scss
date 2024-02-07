@@ -1,0 +1,40 @@
+.navigation {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo img {
+        @include breakpoint (desktop) {
+            width: 145px;
+        }
+    }
+
+    &__navLinks {
+        display: flex;
+        gap: 30px;
+        font-size: 24px;
+        font-family: montserrat;
+        font-weight: 500;
+
+        &__link {
+            
+            @include breakpoint (tablet) {
+                font-size: 19px;
+                margin-left: 20px;
+            }
+
+            @include breakpoint (mobile) {
+                font-size: 12px;
+                margin-left: 20px;
+            }
+
+            &--active {
+                text-decoration: underline;
+            }
+        }
+
+    } 
+
+}

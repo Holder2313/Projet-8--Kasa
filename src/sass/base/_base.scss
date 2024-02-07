@@ -1,0 +1,21 @@
+//--------general--------/
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    box-sizing: border-box;
+    max-width: 1440px;
+    margin: 0 8%;
+    @include breakpoint(mobile){
+        margin: 5%;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

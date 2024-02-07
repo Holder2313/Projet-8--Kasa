@@ -1,0 +1,49 @@
+// éléments
+@mixin bannerHeader {
+    position: relative;
+        width: 100%;
+    
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        border-radius: 25px;
+        margin: 50px 0;
+    
+        @include breakpoint (mobile) {
+            height: 110px;
+            margin: 25px 0;
+        }
+    
+        &__img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            object-fit: cover;
+            opacity: 60%;
+        }
+}
+
+
+// tailles écrans
+@mixin breakpoint($point) {
+    @if $point ==tablet {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $point ==desktop {
+        @media only screen and (max-width: 1080px) {
+            @content;
+        }
+    }
+
+    @else if $point ==mobile {
+        @media only screen and (max-width: 490px) {
+            @content;
+        }
+    }
+}

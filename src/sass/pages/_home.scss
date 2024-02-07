@@ -1,0 +1,14 @@
+.locationGallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: #F6F6F6;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    padding: 20px 0;
+    @include breakpoint (desktop){
+        background: transparent;
+    }
+    
+}

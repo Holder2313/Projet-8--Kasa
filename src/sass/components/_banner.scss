@@ -1,0 +1,15 @@
+.banner{
+    @include bannerHeader;
+
+    &__title{
+        font-size: 48px;
+        margin: 10px;
+        color: white;
+        font-family: montserrat;
+        z-index: 1;
+        @include breakpoint(tablet) {
+                font-size: 24px;
+            }
+        
+    }
+}
