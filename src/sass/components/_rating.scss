@@ -1,0 +1,10 @@
+.rating{
+    align-self: baseline;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    &__star{
+        width: 25px;
+        margin-left: 10px;
+    }
+}

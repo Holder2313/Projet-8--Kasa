@@ -1,11 +1,16 @@
 @import './utils/_mixins';
 @import "./pages/_home";
 @import "./pages/_about";
+@import "./pages/_locationPage";
+@import "./pages/_error404Page";
 @import "./layout/header";
 @import "./components/_cartLocation";
+@import "./components/_tag";
 @import "./components/_collapse";
+@import "./components/_carousel";
+@import "./components/_rating";
 @import './components/_banner';
 @import './layout/_footer';
 
 @import './utils/_variables';
-@import './base/_base';
+@import './base/_base'; 

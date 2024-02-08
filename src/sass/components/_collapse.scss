@@ -1,9 +1,14 @@
 .collapse {
+    margin: 0 auto;
+    justify-content: space-between;
     position: relative;
     box-sizing: border-box;
-    margin: 30px auto;
     width: 80%;
     transition: max-height 0.4s, padding 0.4s;
+
+    @include breakpoint (tablet) {
+        width: 100%;
+    }
 
     &__title {
         z-index: 2;
@@ -14,53 +19,61 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 15px;
+        font-size: 24px;
+        font-family: montserrat;
+        font-weight: 500; 
         border-radius: 5px;
         cursor: pointer;
 
-        &__text {
-        font-size: 24px;
-        font-family: montserrat; 
-        font-weight: 500;
-    }
+        @include breakpoint (tablet) {
+            height: 33px;
+            font-size: 13px;
+        }
+
+
 
         &__icon {
-        width: 30px;
-        
+            width: 30px;
+            transition: 0.1s;
+            @include breakpoint (mobile) {
+                    width: 18px;
+                }
 
-        &--open{
-            transform: rotate(180deg);
-            transition : 0.4s
+            &--open {
+                transform: rotate(180deg);
+                transition: 0.1s
+            }
         }
-    } 
-    
+
     }
 
-    &__info{
+    &__info {
         max-height: 0;
         overflow: hidden;
         background: #F6F6F6;
         padding: 0 15px;
         border-radius: 5px;
         transition: max-height 0.4s, padding 0.4s;
-        
-        
 
-        &__text{
-            font-family: montserrat; 
+
+
+        &__text {
+            font-family: montserrat;
             font-size: 18px;
             font-weight: 400;
-            
-        } 
+            @include breakpoint (tablet) {
+                    font-size: 13px;
+                }
+
+        }
     }
-    &__info--open{
-        max-height: 100px;
+
+    &__info--open {
+        max-height: 150px;
         padding: 15px;
-        
-        
+
+
     }
- 
-    
+
+
 }
-
-
-

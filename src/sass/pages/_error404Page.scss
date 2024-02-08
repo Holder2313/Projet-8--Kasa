@@ -1,0 +1,37 @@
+.errorPage{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: montserrat;
+    color: #FF6060;
+    &__title{
+        
+        font-size: 300px;
+        @include breakpoint (tablet) {
+                font-size: 180px;
+            }
+        @include breakpoint (mobile) {
+                font-size: 100px;
+            }
+    } 
+    &__info{
+        text-align: center;
+        font-size: 36px;
+        font-weight: 500;
+        
+        @include breakpoint (tablet) {
+                font-size: 18px;
+            }
+    }
+    &__link{
+        font-size: 18px;
+        &:hover{
+            text-decoration: underline;
+        }
+        @include breakpoint (mobile) {
+                font-size: 14px;
+            }
+    }
+}

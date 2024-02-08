@@ -1,0 +1,73 @@
+.locationPage {
+    min-height: 70vh;
+    font-family: montserrat;
+
+    
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+
+    &__left {
+        
+
+        &__titre {
+            font-size: 36px;
+            color: #FF6060;
+            font-weight: 500;
+        }
+
+        &__location {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        &__tags {
+            display: flex;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__host {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+
+            &__nameContainer {
+                width: 60px;
+                margin: 0 10px;
+                &__name {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #FF6060;
+                }
+            }
+
+
+            &__img {
+                border: 1px solid;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                margin-left: 15px;
+               
+            }
+        }
+
+
+    }
+        &__collapse {
+            width: 100%;
+            display: flex;
+            gap: 100px; 
+            margin-bottom: 40px;
+        }
+}
