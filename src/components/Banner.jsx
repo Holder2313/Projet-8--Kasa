@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types'
 
-export default function Banner({img, title}) {
+
+export default function Banner({ img, title }) {
+  
   return (
     <header className="banner">
       <img className="banner__img" src={img} alt="image de fond banniere" />
@@ -7,4 +10,8 @@ export default function Banner({img, title}) {
     </header>
   );
 } 
-  
+
+Banner.propTypes = {
+  img: PropTypes.string.isRequired,
+  info: PropTypes.string
+}
