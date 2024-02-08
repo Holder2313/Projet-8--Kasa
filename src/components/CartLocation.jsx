@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 
 export default function CartLocation({title, img}) {
 
@@ -13,4 +13,9 @@ export default function CartLocation({title, img}) {
           
     </div>
   )
+ 
 }
+ CartLocation.propTypes = {
+   title: PropTypes.string.isRequired,
+   img: PropTypes.string.isRequired,
+ };
