@@ -13,13 +13,17 @@ export default function About() {
     <section className="about">
       <Banner img={aboutBanner} />
 
-      {text.map((collapse, index) => (
+      <div className="about__collapse">
+        {text.map((collapse, index) => (
         <Collapse
           key={index}
           title={collapse.title}
           info={collapse.info}
         />
-      )) }
+      ))}
+      </div>
+      
+      
     </section>
   );
 }
