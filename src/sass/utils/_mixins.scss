@@ -13,8 +13,8 @@
     
         @include breakpoint (mobile) {
             height: 110px;
-            margin: 25px 0;
-            margin: 0;
+            margin: 20px 0;
+            
         }
     
         &__img {
@@ -35,16 +35,16 @@
             @content;
         }
     }
-
+ 
     @else if $point ==desktop {
-        @media only screen and (max-width: 1080px) {
+        @media only screen and (max-width: 1280px) {
             @content;
         }
     }
 
     @else if $point ==mobile {
         @media only screen and (max-width: 490px) {
-            @content;
+            @content; 
         }
     }
 }

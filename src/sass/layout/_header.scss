@@ -1,14 +1,18 @@
 .navigation {
     width: 100%;
-    margin: 30px 0;
+    margin: 30px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     &__logo img {
         @include breakpoint (desktop) {
-            width: 135px;
+            width: 150px;
+            margin-right: 10px;
         }
+                @include breakpoint (mobile) {
+                    width: 125px;
+                }
     }
 
     &__navLinks {
@@ -28,6 +32,7 @@
             @include breakpoint (mobile) {
                 font-size: 12px;
                 text-transform: uppercase;
+                gap: 16px;
                 
             }
 

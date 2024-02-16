@@ -3,8 +3,17 @@
     display: flex;
     justify-content: space-between;
     width: 200px;
+    @include breakpoint (mobile) {
+           width: 100px;
+           justify-content: flex-start;
+        }
     &__star{
         width: 25px;
-        margin-left: 10px;
-    }
-}
+        margin-right: 10px;
+        
+        @include breakpoint (mobile) {
+                width: 18px;
+                margin-right: 5px;
+            }
+    } 
+} 

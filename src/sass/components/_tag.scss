@@ -1,9 +1,9 @@
-.tag{
+.tag {
     font-size: 18px;
     font-weight: 500;
     color: white;
     background: #FF6060;
-    padding: 1px 30px ;
+    padding: 2px 20px;
     margin-right: 10px;
     margin-top: 10px;
     height: 25px;
@@ -11,6 +11,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
+    @include breakpoint (tablet) {
+        font-size: 14px;
+    }
+
+    @include breakpoint (mobile) {
+        padding: 1px 15px;
+        white-space: nowrap;
+    }
 
 }

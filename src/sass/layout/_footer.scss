@@ -20,6 +20,7 @@
     }
 
     &__legal {
+        display: flex;
         color: white;
         font-family: montserrat;
         font-size: 24px;
@@ -27,6 +28,8 @@
 
         @include breakpoint (mobile) {
             font-size: 12px;
+            flex-direction: column;
+            align-items: center;
         }
     }
 }

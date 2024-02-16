@@ -33,9 +33,9 @@
 
 
         &__icon {
-            width: 30px;
+            width: 30px; 
             transition: 0.1s;
-            @include breakpoint (mobile) {
+            @include breakpoint (tablet) {
                     width: 18px;
                 }
 
