@@ -1,15 +1,15 @@
 import { useState } from "react";
 import arrow from "../assets/icons/arrowUp.svg";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-export default function Collapse({ title, info }) {
+export default function Collapse({ title, info, equipments }) {
   const [isOpen, setIsOpen] = useState(false);
-  const collapseToggle = () => setIsOpen(!isOpen);
 
-  
+  console.log(info);
+
   return (
     <div className="collapse">
-      <div className=" collapse__title" onClick={collapseToggle}>
+      <div className=" collapse__title" onClick={() => setIsOpen(!isOpen)}>
         <p className="collapse__title__text">{title}</p>
         <img
           className={`collapse__title__icon ${
@@ -24,7 +24,15 @@ export default function Collapse({ title, info }) {
         <div
           className={`collapse__info ${isOpen ? "collapse__info--open" : ""} `}
         >
-          <p className="collapse__info__text">{info}</p>
+          {equipments ? (
+            <ul>
+              {equipments.map((item, index) => (
+                <li key={index} className=" collapse__equipments">{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>{info} </p>
+          )}
         </div>
       )}
     </div>
@@ -33,5 +41,6 @@ export default function Collapse({ title, info }) {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
+  info: PropTypes.string,
+  equipments: PropTypes.array,
 };

@@ -4,9 +4,7 @@ import Banner from "../components/Banner";
 import {collapseAboutTextInfo } from "../data/collapseTextInfo";
 
 export default function About() {
-  const text = collapseAboutTextInfo
-  console.log(text);
-
+  const textCollapse = collapseAboutTextInfo
 
 
   return (
@@ -14,7 +12,7 @@ export default function About() {
       <Banner img={aboutBanner} />
 
       <div className="about__collapse">
-        {text.map((collapse, index) => (
+        {textCollapse.map((collapse, index) => (
         <Collapse
           key={index}
           title={collapse.title}

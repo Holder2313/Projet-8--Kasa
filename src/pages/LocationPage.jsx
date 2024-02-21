@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "../components/Carousel";
-import {  useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UseAPICall from "../hooks/UseAPICall";
 import Tag from "../components/Tag";
 import Rating from "../components/Rating";
 import Collapse from "../components/Collapse";
 
-
-export default function LocationPage() { 
-  const navigate = useNavigate()
+export default function LocationPage() {
+  const navigate = useNavigate();
   const params = useParams();
   const data = UseAPICall();
+
   const id = params.id;
 
-  const currentLocation = data.locationData
-    ? data.locationData.find((item) => item.id === id)
-    : null;
-  
-  if (!currentLocation) {
-    navigate('/card')
-  }
-  
 
+useEffect(() => {
+  // S'assurer que data.locationData est chargé avant de faire la recherche
+  if (data.locationData) {
+    const currentLocation = data.locationData.find(
+      (item) => item.id.toString() === id
+    );
+
+    if (!currentLocation) {
+      navigate("/Error404");
+    }
+  }
+}, [id, data.locationData, navigate]);
+  
+   const currentLocation = data.locationData?.find(
+     (item) => item.id.toString() === id
+   );
+   if (!currentLocation) return null;
+
+  
+  
   return (
     <section className="locationPage">
       {/* carousel */}
-      {currentLocation && <Carousel pictures={currentLocation.pictures} />} 
+      {currentLocation && <Carousel pictures={currentLocation.pictures} />}
 
       {/* infos */}
       {currentLocation && (
@@ -49,6 +61,7 @@ export default function LocationPage() {
                     {currentLocation.host.name}
                   </p>
                 </div>
+
                 <img
                   className="info__right__host__img"
                   src={currentLocation.host.picture}
@@ -57,14 +70,20 @@ export default function LocationPage() {
               </div>
               {/* notation étoiles */}
               <div className="info__right__rating">
-                <Rating />
+                <Rating rating={parseInt(currentLocation.rating)} />
               </div>
             </div>
           </div>
           {/* accordeons */}
           <div className="info__collapse">
-            <Collapse title={'Description'} info={currentLocation.description} />
-            <Collapse title={'Équipements'} info={currentLocation.equipments.join(`- `)} />
+            <Collapse
+              title={"Description"}
+              info={currentLocation.description}
+            />
+            <Collapse
+              title={"Équipements"}
+              equipments={currentLocation.equipments}
+            />
           </div>
         </>
       )}

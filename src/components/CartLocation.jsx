@@ -19,3 +19,4 @@ export default function CartLocation({title, img}) {
    title: PropTypes.string.isRequired,
    img: PropTypes.string.isRequired,
  };
+ 

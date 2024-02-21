@@ -8,7 +8,8 @@ export default function Footer() {
         <img className='footer__logo__img' src={footerLogo} alt="" />
       </div>
       <div className="footer__legal">
-        <p>© 2024 Kasa.All right reserved</p>
+        <p>© 2024 Kasa.</p>
+          <p>All right reserved</p>
       </div>
     </footer>
   );

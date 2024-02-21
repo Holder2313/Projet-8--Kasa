@@ -4,10 +4,12 @@ import { useEffect, useState } from "react"
 export default function UseAPICall() {
 
     const [locationData, setLocationData] = useState()
-    const [error, setError] = useState(false)
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
 
     useEffect(() => {
-        async function fetchDataLocation (){
+        async function fetchDataLocation() {
             try {
                 const response = await fetch('/api/logements.json');
                 if (!response.ok) throw new Error(`Erreur HTTP. Statut : ${response.status}`);
@@ -16,21 +18,21 @@ export default function UseAPICall() {
                 console.log(data);
 
                 setLocationData(data);
-                
+                setLoading(false)
+
             }
             catch (error) {
                 console.error("Erreur lors de la récupération des données :", error);
+                setError(true)
+                setLoading(false)
 
-                setError(true);
             }
         };
 
         fetchDataLocation();
     }, []);
-    
 
-   
 
-  return {locationData, error}
-    
+    return { locationData, loading, error }
+
 }

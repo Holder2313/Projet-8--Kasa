@@ -69,11 +69,15 @@
     }
 
     &__info--open {
-        max-height: 150px;
+        max-height: 200px;
         padding: 15px;
-
-
     }
+
+    &__equipments{
+        font-size: 18px;
+        list-style: none;
+    }
+    
 
 
 }

@@ -3,6 +3,7 @@ import CartLocation from "../components/CartLocation";
 import Banner from "../components/Banner";
 import bannerImg from "../assets/images/header-banner.jpeg";
 import { NavLink } from "react-router-dom";
+import Loader from "../components/Loader";
 
 export default function Home() {
   const data = UseAPICall();
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Banner img={bannerImg} title={"Chez vous, partout et ailleurs"} />
-
+ 
       <section className="locationGallery">
         {data.locationData ? (
           data.locationData.map((obj, index) => (
@@ -20,9 +21,9 @@ export default function Home() {
             </NavLink>
           ))
         ) : (
-          <p className="error-msg">Erreur lors de la récupération des données</p>
+          <Loader />
         )}
-      </section>
+      </section> 
     </div>
   );
 }
