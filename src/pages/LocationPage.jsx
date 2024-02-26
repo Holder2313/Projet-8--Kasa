@@ -6,7 +6,6 @@ import Tag from "../components/Tag";
 import Rating from "../components/Rating";
 import Collapse from "../components/Collapse";
 
-
 export default function LocationPage() {
   const navigate = useNavigate();
   const params = useParams();
@@ -14,22 +13,21 @@ export default function LocationPage() {
 
   const id = params.id;
 
-
+  const [currentLocation, setCurrentLocation] = useState(null);
 
   useEffect(() => {
+   
     if (data.locationData) {
-      const currentLocation = data.locationData.find((item) => item.id.toString() === id);
 
-      if (!currentLocation) {
+      const location = data.locationData.find((item) => item.id === id);
+
+      if (!location) {
         navigate("/Error404");
       }
+      setCurrentLocation(location)
+      
     }
-  }, [id, data.locationData, navigate]);
-
-  const currentLocation = data.locationData
-    ? data.locationData.find((item) => item.id === id)
-    : null;
-  
+  }, [id, data.locationData]);
 
   return (
     <section className="locationPage">
@@ -77,10 +75,7 @@ export default function LocationPage() {
               title={"Description"}
               info={currentLocation.description}
             />
-            <Collapse
-              title={"Équipements"}
-              info={currentLocation.equipments}
-            />
+            <Collapse title={"Équipements"} info={currentLocation.equipments} />
           </div>
         </>
       )}

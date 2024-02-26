@@ -1,10 +1,11 @@
+// base
+@import './base/_base'; 
+
+//util
 @import './utils/_mixins';
 @import './utils/_variables';
-@import "./pages/_home";
-@import "./pages/_about";
-@import "./pages/_locationPage";
-@import "./pages/_error404Page";
-@import "./layout/header";
+
+// components
 @import "./components/_cartLocation";
 @import "./components/_tag";
 @import "./components/_collapse";
@@ -12,6 +13,13 @@
 @import "./components/_carousel";
 @import "./components/_rating";
 @import './components/_banner';
+
+// layout
+@import "./layout/header";
 @import './layout/_footer';
 
-@import './base/_base'; 
+// pages
+@import "./pages/_home";
+@import "./pages/_about";
+@import "./pages/_locationPage";
+@import "./pages/_error404Page";

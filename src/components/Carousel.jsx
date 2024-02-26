@@ -23,35 +23,32 @@ export default function Carousel({ pictures }) {
   
 
   return (
-    
     <div className="carousel">
       <img className="carousel__img" src={pictures[indexPicture]} alt="" />
 
-      {pictures.length > 1 &&
-      <div className="carousel__arrows">
-        <img
-          onClick={() => setIndexPicture(indexPicture - 1)}
-          className="carousel__arrows__icon carousel__arrows__icon--left"
-          src={arrow}
-          alt="left arrow"
-        />
-        <img
-          onClick={() => setIndexPicture(indexPicture + 1)
-            
-          
-          }
-          className="carousel__arrows__icon carousel__arrows__icon--right"
-          src={arrow}
-          alt="right arrow"
-        />
-      </div>
-      }
-      
-      <p className="carousel__index">
-        {`${indexPicture + 1} / ${pictures.length}`}
-      </p>
-    </div >
-       
+      {pictures.length > 1 && (
+        <>
+          <div className="carousel__arrows">
+            <img
+              onClick={() => setIndexPicture(indexPicture - 1)}
+              className="carousel__arrows__icon carousel__arrows__icon--left"
+              src={arrow}
+              alt="left arrow"
+            />
+            <img
+              onClick={() => setIndexPicture(indexPicture + 1)}
+              className="carousel__arrows__icon carousel__arrows__icon--right"
+              src={arrow}
+              alt="right arrow"
+            />
+          </div>
+
+          <p className="carousel__index">
+            {`${indexPicture + 1} / ${pictures.length}`}
+          </p>
+        </>
+      )}
+    </div>
   );
 }
 

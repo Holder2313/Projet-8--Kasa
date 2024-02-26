@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 export default function Collapse({ title, info }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(typeof info);
+ 
+
 
   return (
     <div className="collapse">
@@ -24,20 +25,17 @@ export default function Collapse({ title, info }) {
         <div
           className={`collapse__info ${isOpen ? "collapse__info--open" : ""} `}
         >
-          
-          {typeof info === 'object' ? (
-          <ul>
+          {Array.isArray(info) ? (
+            <ul>
               {info.map((item, index) => (
-                <li key={index} className=" collapse__equipments">{item}</li>
+                <li key={index} className=" collapse__equipments">
+                  {item}
+                </li>
               ))}
             </ul>
           ) : (
             <p>{info} </p>
           )}
-            
-         
-           
-          
         </div>
       )}
     </div>
