@@ -1,12 +1,12 @@
 {
-  "homepage": "https://holder2313.github.io/Projet-8--Kasa",
+  "homepage": "https://Holder2313.github.io/Projet-8--Kasa",
   "name": "kasa",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b gh-pages -f",
+    "deploy": "gh-pages -d dist",
     "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
