@@ -14,7 +14,9 @@ export default function Home() {
       <Banner img={bannerImg} title={"Chez vous, partout et ailleurs"} />
  
       <section className="locationGallery">
+
         {data.locationData ? (
+          
           data.locationData.map((obj, index) => (
             <NavLink key={index} to={`/card/${obj.id}`}>
               <CartLocation title={obj.title} img={obj.cover} />

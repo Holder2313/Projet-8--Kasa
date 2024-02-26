@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "../components/Carousel";
 import { useNavigate, useParams } from "react-router-dom";
 import UseAPICall from "../hooks/UseAPICall";
 import Tag from "../components/Tag";
 import Rating from "../components/Rating";
 import Collapse from "../components/Collapse";
+
 
 export default function LocationPage() {
   const navigate = useNavigate();
@@ -14,26 +15,22 @@ export default function LocationPage() {
   const id = params.id;
 
 
-useEffect(() => {
-  // S'assurer que data.locationData est chargé avant de faire la recherche
-  if (data.locationData) {
-    const currentLocation = data.locationData.find(
-      (item) => item.id.toString() === id
-    );
 
-    if (!currentLocation) {
-      navigate("/Error404");
+  useEffect(() => {
+    if (data.locationData) {
+      const currentLocation = data.locationData.find((item) => item.id.toString() === id);
+
+      if (!currentLocation) {
+        navigate("/Error404");
+      }
     }
-  }
-}, [id, data.locationData, navigate]);
-  
-   const currentLocation = data.locationData?.find(
-     (item) => item.id.toString() === id
-   );
-   if (!currentLocation) return null;
+  }, [id, data.locationData, navigate]);
 
+  const currentLocation = data.locationData
+    ? data.locationData.find((item) => item.id === id)
+    : null;
   
-  
+
   return (
     <section className="locationPage">
       {/* carousel */}
@@ -82,7 +79,7 @@ useEffect(() => {
             />
             <Collapse
               title={"Équipements"}
-              equipments={currentLocation.equipments}
+              info={currentLocation.equipments}
             />
           </div>
         </>

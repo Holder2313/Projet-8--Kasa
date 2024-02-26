@@ -4,10 +4,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    font-family: montserrat;
-    color: #FF6060;
+    color: $main-color;
+
     &__title{
-        
         font-size: 300px;
         @include breakpoint (tablet) {
                 font-size: 180px;
@@ -16,6 +15,7 @@
                 font-size: 100px;
             }
     } 
+
     &__info{
         text-align: center;
         font-size: 36px;

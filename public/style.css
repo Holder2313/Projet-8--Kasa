@@ -32,7 +32,6 @@
 
 .locationPage {
   min-height: 70vh;
-  font-family: montserrat;
 }
 
 .info {
@@ -152,7 +151,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-family: montserrat;
   color: #FF6060;
 }
 .errorPage__title {
@@ -317,7 +315,6 @@
   align-items: center;
   padding: 0 15px;
   font-size: 24px;
-  font-family: montserrat;
   font-weight: 500;
   border-radius: 5px;
   cursor: pointer;
@@ -350,7 +347,6 @@
   transition: max-height 0.4s, padding 0.4s;
 }
 .collapse__info__text {
-  font-family: montserrat;
   font-size: 18px;
   font-weight: 400;
 }
@@ -448,7 +444,6 @@
   position: absolute;
   left: 50%;
   bottom: 50px;
-  font-family: montserrat;
   color: white;
 }
 @media only screen and (max-width: 490px) {
@@ -561,7 +556,7 @@ body {
   box-sizing: border-box;
   max-width: 1440px;
   margin: 0 10%;
-  font-family: montserrat;
+  font-family: "Montserrat";
 }
 @media only screen and (max-width: 490px) {
   body {

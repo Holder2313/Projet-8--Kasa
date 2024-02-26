@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import arrow from "../assets/icons/arrowUp.svg";
 import PropTypes from "prop-types";
+import Loader from "./Loader";
 
 
 export default function Carousel({ pictures }) {
@@ -9,7 +10,7 @@ export default function Carousel({ pictures }) {
   useEffect(() => {
     if (pictures.length > 1) {
       if (indexPicture === -1) {
-        setIndexPicture(pictures.length - 1);
+        setIndexPicture(pictures.length -1 );
       } else if (indexPicture === pictures.length) {
         setIndexPicture(0);
       }
@@ -22,15 +23,17 @@ export default function Carousel({ pictures }) {
   
 
   return (
+    
     <div className="carousel">
       <img className="carousel__img" src={pictures[indexPicture]} alt="" />
+
       {pictures.length > 1 &&
       <div className="carousel__arrows">
         <img
           onClick={() => setIndexPicture(indexPicture - 1)}
           className="carousel__arrows__icon carousel__arrows__icon--left"
           src={arrow}
-          alt=""
+          alt="left arrow"
         />
         <img
           onClick={() => setIndexPicture(indexPicture + 1)
@@ -39,15 +42,16 @@ export default function Carousel({ pictures }) {
           }
           className="carousel__arrows__icon carousel__arrows__icon--right"
           src={arrow}
-          alt=""
+          alt="right arrow"
         />
       </div>
       }
       
       <p className="carousel__index">
-        {`${indexPicture + 1} / ${pictures.length}`}{" "}
+        {`${indexPicture + 1} / ${pictures.length}`}
       </p>
-    </div>
+    </div >
+       
   );
 }
 

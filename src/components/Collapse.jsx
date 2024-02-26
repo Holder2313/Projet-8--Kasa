@@ -2,10 +2,10 @@ import { useState } from "react";
 import arrow from "../assets/icons/arrowUp.svg";
 import PropTypes from "prop-types";
 
-export default function Collapse({ title, info, equipments }) {
+export default function Collapse({ title, info }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(info);
+  console.log(typeof info);
 
   return (
     <div className="collapse">
@@ -24,15 +24,20 @@ export default function Collapse({ title, info, equipments }) {
         <div
           className={`collapse__info ${isOpen ? "collapse__info--open" : ""} `}
         >
-          {equipments ? (
-            <ul>
-              {equipments.map((item, index) => (
+          
+          {typeof info === 'object' ? (
+          <ul>
+              {info.map((item, index) => (
                 <li key={index} className=" collapse__equipments">{item}</li>
               ))}
             </ul>
           ) : (
             <p>{info} </p>
           )}
+            
+         
+           
+          
         </div>
       )}
     </div>
@@ -41,6 +46,5 @@ export default function Collapse({ title, info, equipments }) {
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  info: PropTypes.string,
-  equipments: PropTypes.array,
+  info: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
