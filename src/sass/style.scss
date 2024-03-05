@@ -1,9 +1,10 @@
-// base
-@import './base/_base'; 
-
 //util
 @import './utils/_mixins';
 @import './utils/_variables';
+
+// base
+@import './base/_base'; 
+
 
 // components
 @import "./components/_cartLocation";
