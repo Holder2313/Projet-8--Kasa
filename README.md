@@ -1,3 +1,5 @@
+![Capture d'écran principale de l'application Kasa](/src/assets/images/captureGH.png)
+
 # Projet Kasa
 Bienvenue sur le dépôt GitHub de la nouvelle plateforme web de Kasa, leader de la location d'appartements entre particuliers en France. Ce projet est une refonte totale de l'ancien site de Kasa, avec une modernisation de la stack technologique pour améliorer l'expérience utilisateur et la maintenabilité du code.
 
