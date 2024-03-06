@@ -3,7 +3,7 @@ Bienvenue sur le dépôt GitHub de la nouvelle plateforme web de Kasa, leader de
 ![Capture d'écran principale de l'application Kasa](https://github.com/Holder2313/Projet-8--Kasa/blob/main/src/assets/images/captureGH.png)
 
 ## Contexte
-Kasa, avec plus d'une décennie d'expérience dans la location d'appartements et plus de 500 annonces postées chaque jour, a entrepris de moderniser son site web. Ce projet représente une opportunité unique de contribuer à un produit significatif et d'enrichir votre portfolio de freelance.
+Kasa, avec plus d'une décennie d'expérience dans la location d'appartements et plus de 500 annonces postées chaque jour, a entrepris de moderniser son site web. 
 
 ## Objectif
 Le but est de démarrer le développement du front-end de la plateforme en utilisant React, en se basant sur des maquettes Figma fournies et un fichier JSON contenant les 20 dernières annonces. Les composants sont crées avec React, les routes sont configurées avec React Router.
